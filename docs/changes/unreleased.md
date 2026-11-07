@@ -9,6 +9,13 @@ this file once they land.
 
 ## Recent changes
 
+- **491 — MeshCore session teardown and Chatmail retirement qualification.**
+  Promote the MeshCore adapter whose session stop clears the inbound callback
+  before its first await and whose start refuses while an earlier start's
+  session remains installed. Promote the Chatmail adapter whose SDK-tier suite
+  qualifies RPC retirement and native profile exclusion against the pinned
+  client and server; Chatmail runtime behavior is unchanged.
+
 - **489 — Startup history and pre-start buffering.** Promote the Matrix adapter
   that suppresses events older than its start baseline by more than
   `startup_backlog_suppress_seconds` (default 60 seconds) before decode on live,
